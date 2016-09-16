@@ -1,4 +1,4 @@
-FROM centos 7
+FROM centos
 
 RUN cd /opt \
 	&& yum install -y \
