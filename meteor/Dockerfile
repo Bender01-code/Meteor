@@ -8,9 +8,6 @@ RUN cd /opt \
 	&& yum install wget -y \
 	&& yum install epel-release -y \
 	&& yum install npm -y \
-	&& yum install locales -y \
-	&& locale-gen en_US.UTF-8 \
-	&& localedef -i en_GB -f UTF-8 en_US.UTF-8 \
 	&& yum install make -y
 
 
