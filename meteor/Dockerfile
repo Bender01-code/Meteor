@@ -6,6 +6,7 @@ RUN cd /opt \
 	&& yum install git -y \
 	&& yum install python -y\
 	&& yum install wget -y \
+	&& yum install epel-release -y \
 	&& yum install npm -y \
 	&& yum install locales -y \
 	&& locale-gen en_US.UTF-8 \
