@@ -15,7 +15,7 @@ RUN git clone https://github.com/meteor/todos \
 	&& cd todos \
 	&& meteor npm install \
 	&& meteor add anti:gagarin \
-	&& npm install -g gagarin \
+	&& npm install -g gagarin
 
 EXPOSE 3000
 CMD ["meteor"]
