@@ -1,22 +1,28 @@
-FROM centos
+FROM centos 7
 
 RUN cd /opt \
-	&& yum install curl -y \
-	&& curl https://install.meteor.com/ | sh \
-	&& yum install git -y \
-	&& yum install python -y\
-	&& yum install wget -y \
-	&& yum install epel-release -y \
-	&& yum install npm -y \
-	&& yum install make -y
+	&& yum install -y \
+	curl \
+	git \
+	python \
+	wget \
+	epel-release \
+	npm \
+	make \
+	&& curl https://install.meteor.com/ | sh 
+	
 
 
 RUN git clone https://github.com/meteor/todos \
 	&& cd todos \
 	&& meteor npm install \
 	&& meteor add anti:gagarin \
-	&& npm install -g gagarin
+	&& npm install -g gagarin 
+
+ADD simpleTest.js /todos/tests
 
 EXPOSE 3000
-CMD ["meteor"]
+WORKDIR /todos
+ENTRYPOINT ["gagarin"]
+ENTRYPOINT ["meteor"]
 
