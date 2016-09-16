@@ -4,7 +4,7 @@ RUN cd /opt \
 	&& yum install curl -y \
 	&& curl https://install.meteor.com/ | sh \
 	&& yum install git -y \
-	&& yum install python \
+	&& yum install python -y\
 	&& yum install wget -y \
 	&& yum install npm -y \
 	&& yum install locales -y \
