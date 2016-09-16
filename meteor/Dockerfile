@@ -1,7 +1,6 @@
 FROM centos
 
-RUN cd /opt \
-	&& yum install -y \
+RUN yum install -y \
 	curl \
 	git \
 	python \
